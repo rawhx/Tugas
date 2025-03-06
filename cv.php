@@ -83,7 +83,7 @@
                                 <?= $_SESSION["email"] ?>
                             </span>
                         </p>
-                        <p><?= dateFormat($_SESSION["data"]["tanggalLahir"]) ?></p>
+                        <p class="m-0 text-center text-lg-start"><?= dateFormat($_SESSION["data"]["tanggalLahir"]) ?></p>
                     </div>
                 </div>
                 <div>
