@@ -30,6 +30,27 @@
 
         return $bulanTahunAwal . ' - ' . $bulanTahunAkhir;
     }
+    function dateFormat($tanggal) {
+        $bulan = [
+            'January' => 'Januari',
+            'February' => 'Februari',
+            'March' => 'Maret',
+            'April' => 'April',
+            'May' => 'Mei',
+            'June' => 'Juni',
+            'July' => 'Juli',
+            'August' => 'Agustus',
+            'September' => 'September',
+            'October' => 'Oktober',
+            'November' => 'November',
+            'December' => 'Desember'
+        ];
+        $dateAwal = new DateTime($tanggal);
+
+        $bulanTahunAwal = $dateAwal->format("d") . ' ' . $bulan[ $dateAwal->format('F')] . ' ' . $dateAwal->format('Y');
+
+        return $bulanTahunAwal;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +64,7 @@
 </head>
 <body>
     <div class="container p-5 d-flex justify-content-center align-items-center">
-        <div class="card p-5" style="width: 100%;height: fit-content;overflow-y: auto;">
+        <div class="card p-5" style="max-width: 50em;height: fit-content;overflow-y: auto;">
             <div class="card-body d-flex flex-column gap-5">
                 <div class="d-flex flex-column flex-lg-row gap-4 align-items-center">
                     <div style="width:120px;height:120px;border-radius: 100%;background-color: red;overflow: hidden;">
@@ -62,6 +83,7 @@
                                 <?= $_SESSION["email"] ?>
                             </span>
                         </p>
+                        <p><?= dateFormat($_SESSION["data"]["tanggalLahir"]) ?></p>
                     </div>
                 </div>
                 <div>
@@ -77,7 +99,7 @@
                         foreach ($_SESSION["data"]["pendidikan"] as $key => $value) {
                                 echo "<div>";
                                 echo "<h6 class='fw-bold'>" . formatTanggalRange($value['tanggalAwal'], $value['tanggalAkhir']) . " | " . htmlspecialchars($value['pendidikan']) . "</h6>";
-                                echo "<p class='m-0' style='text-align: justify;'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda aperiam maiores quisquam omnis ex sit velit ullam, earum officia nam? Quisquam corrupti atque porro vel est expedita ea. Architecto et ab minima natus praesentium iure deleniti, aperiam possimus culpa corrupti? Temporibus, dicta officiis.</p>";
+                                echo "<p class='m-0' style='text-align: justify;'>{$value['deskripsi']}</p>";
                                 echo "</div>";
                             }                    
                         ?>
