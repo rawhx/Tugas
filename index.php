@@ -47,12 +47,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
-<body>
-    <div class="container p-5 d-flex justify-content-center align-items-center">
+<body class="p-5">
+    <div class="container p-3 d-flex justify-content-center align-items-center">
         <div class="card">
             <div class="card-body p-4 d-flex flex-column flex-lg-row gap-3 align-items-center">
-                <!-- <img style="position: sticky;" class="img-fluid w-50 w-md-75 w-lg-90" src="https://img.freepik.com/free-vector/document-vector-colorful-design_341269-1262.jpg?t=st=1741145268~exp=1741148868~hmac=5b8f44f87e9b7cadd0196e2e676eac33c3f2119137a89527a3b1d3b109325732&w=1060" alt="login"> -->
-                <div>
+                <div style="width: fit-content;">
                     <h3 style="position: sticky;top:0;background-color: white;padding:20px 0;">Form Input Data CV</h3>
                     <form method="post" id="form-cv" enctype="multipart/form-data">
                         <div class="mb-3 d-flex flex-column flex-sm-row gap-2">
