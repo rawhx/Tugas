@@ -1,3 +1,4 @@
-password : 
-- gmail.com
-- ub.ac.id 
+password : diambil dari setelah @
+contoh : 
+    username: example@gmail.com
+    password: gmail.com 

@@ -11,11 +11,11 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         $email = $_POST['email'];
         $password = $_POST['password'];
     
-        if($password == "gmail.com" || $password == "ub.ac.id") {
+        if($password == explode("@", $email)[1]) {
             $_SESSION['email'] = $email;
             $_SESSION["message"] = "Login berhasil";
             header("Location: ./");
-        } else {
+        } else{
             $_SESSION["message"] = "Email atau password salah";
             header("location: ./login.php");
         }
